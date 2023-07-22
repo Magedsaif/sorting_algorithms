@@ -20,11 +20,15 @@ typedef struct listint_s
 } listint_t;
 
 void bubble_sort(int *array, size_t size);
-int *swap(int array[], int idx1, int idx2);
+
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void insertion_sort_list(listint_t **list);
 listint_t *create_listint(const int *array, size_t size);
 void selection_sort(int *array, size_t size);
+void quick_sort(int *array, size_t size);
+void swap(int *num1, int *num2);
+int partition(int arr[], int first, int last, size_t size);
+void quick_sort1(int *array, int first, int last, size_t size);
 
 #endif
