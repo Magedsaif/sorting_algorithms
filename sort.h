@@ -30,5 +30,6 @@ void quick_sort(int *array, size_t size);
 void swap(int *num1, int *num2);
 int partition(int arr[], int first, int last, size_t size);
 void quick_sort1(int *array, int first, int last, size_t size);
+void shell_sort(int *array, size_t size);
 
 #endif
