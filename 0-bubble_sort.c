@@ -9,13 +9,14 @@
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, j, flag;
-	int temp; /* Declare variable 'temp' of type int to store temporary values during swap */
+	int temp;
 
-	for (i = 0; i < size; i++) /* Outer loop to iterate through the array elements */
+	/* Outer loop to iterate through the array elements */
+	for (i = 0; i < size; i++)
 	{
 		flag = 0;
-
-		for (j = 0; j < size - i - 1; j++) /* Inner loop to perform comparisons and swaps */
+		/* Inner loop to perform comparisons and swaps */
+		for (j = 0; j < size - i - 1; j++)
 		{
 			/* Check if the current element is greater than the next element */
 			if (array[j] > array[j + 1])
