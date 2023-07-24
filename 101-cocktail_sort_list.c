@@ -60,25 +60,32 @@ void swap(int *num1, int *num2)
 	*num2 = temp;
 }
 /**
- * calc_list_size - calculate the size of list.
+ * calc_list_size - calculate the size of the list.
  *
  * @list: list of numbers.
- * Return: the size of list
+ *
+ * Return: the size of the list.
  */
 int calc_list_size(listint_t *list)
 {
 	listint_t *curr;
 	int cnt;
 
+	/* Initialize 'curr' as the head of the list and 'cnt' as 0 */
 	curr = list;
 	cnt = 0;
+
+	/* Traverse the list and increment 'cnt' for each node */
 	while (curr)
 	{
 		curr = curr->next;
 		cnt++;
 	}
+
+	/* Return the total number of nodes,which represents the size of the list*/
 	return (cnt);
 }
+
 /**
  * get_last_node - get the last node of the list.
  *
