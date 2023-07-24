@@ -18,7 +18,7 @@ void cocktail_sort_list(listint_t **list)
 	while (curr)
 	{
 		flag = 0;
-		curr2 = curr;
+		curr2 = *list;
 		size = list_size1--;
 		while (curr2->next && size--)
 		{
@@ -44,7 +44,6 @@ void cocktail_sort_list(listint_t **list)
 			} else
 				temp = temp->prev;
 		}
-		curr = curr->next;
 	}
 }
 /**
@@ -60,73 +59,56 @@ void swap(int *num1, int *num2)
 	*num2 = temp;
 }
 /**
- * calc_list_size - calculate the size of the list.
+ * calc_list_size - calculate the size of list.
  *
  * @list: list of numbers.
- *
- * Return: the size of the list.
+ * Return: the size of list
  */
 int calc_list_size(listint_t *list)
 {
 	listint_t *curr;
 	int cnt;
 
-	/* Initialize 'curr' as the head of the list and 'cnt' as 0 */
 	curr = list;
 	cnt = 0;
-
-	/* Traverse the list and increment 'cnt' for each node */
 	while (curr)
 	{
 		curr = curr->next;
 		cnt++;
 	}
-
-	/* Return the total number of nodes,which represents the size of the list*/
 	return (cnt);
 }
-
 /**
- * get_last_node - get the last node of the list.
+ * get_last_node - get the last node of list.
  *
  * @list: list of numbers.
- *
- * Return: the last node of the list.
+ * Return: the last node of list
  */
 listint_t *get_last_node(listint_t *list)
 {
 	listint_t *curr;
 
-	/* Initialize 'curr' as the head of the list */
 	curr = list;
-
-	/* Traverse the list until the last node is reached */
 	while (curr->next)
 	{
 		curr = curr->next;
 	}
-
-	/* Return the last node of the list */
 	return (curr);
 }
 
-
 /**
- * swap_list - swap the node with its previous node.
+ * swap_list - swap the node with it prev node.
  *
  * @list: list of numbers.
- * @curr2: the node to swap with its previous node.
- *
- * Return: the last node of the list.
+ * @curr2: the node i wanna the swap it with prev node.
+ * Return: the last node of list
  */
 listint_t *swap_list(listint_t *list, listint_t *curr2)
 {
 	listint_t *temp;
 
-	/* Store the previous node of the current node in 'temp' */
 	temp = curr2->prev;
 
-	/* Update pointers to perform the node swap */
 	curr2->prev = temp->prev;
 	if (temp->prev)
 		temp->prev->next = curr2;
@@ -137,11 +119,7 @@ listint_t *swap_list(listint_t *list, listint_t *curr2)
 	curr2->next = temp;
 	temp->prev = curr2;
 
-	/* Update the 'list' pointer if the current node is now the first node */
 	if (!curr2->prev)
 		list = curr2;
-
-	/* Return the updated list (the last node remains unchanged) */
 	return (list);
 }
-
