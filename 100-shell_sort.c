@@ -21,7 +21,7 @@ void shell_sort(int *array, size_t size)
 	/* Start Shell sort with the calculated gap */
 	while (gap > 0)
 	{
-		/* Perform insertion sort on subarrays with the current gap */
+		/* Perform insertion sort on sub arrays with the current gap */
 		for (i = 0; i < size; i++)
 		{
 			for (j = i; j < size - gap; j += gap)
