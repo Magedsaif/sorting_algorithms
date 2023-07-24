@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "sort.h"
+
 /**
  * shell_sort - sorts an array of integers in ascending
  * order using the Shell sort algorithm, using the Knuth sequence.
@@ -11,18 +12,25 @@ void shell_sort(int *array, size_t size)
 {
 	size_t i, j, gap, f;
 
+	/* Calculate initial gap using Knuth's sequence */
 	gap = 1;
 	while (gap < size)
 		gap = (gap * 3) + 1;
 	gap = (gap - 1) / 3;
+
+	/* Start Shell sort with the calculated gap */
 	while (gap > 0)
 	{
+		/* Perform insertion sort on subarrays with the current gap */
 		for (i = 0; i < size; i++)
 		{
 			for (j = i; j < size - gap; j += gap)
 			{
+				/* Compare and swap elements if necessary */
 				if (array[j] > array[j + gap])
 					swap(&array[j], &array[j + gap]);
+
+				/* Perform insertion sort on the current subarray */
 				f = j;
 				while (f >= gap)
 				{
@@ -32,7 +40,11 @@ void shell_sort(int *array, size_t size)
 				}
 			}
 		}
+
+		/* Reduce the gap for the next iteration */
 		gap = (gap - 1) / 3;
+
+		/* Print the current state of the array after each iteration */
 		print_array(array, size);
 	}
 }
