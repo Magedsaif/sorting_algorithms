@@ -30,7 +30,7 @@ void shell_sort(int *array, size_t size)
 				if (array[j] > array[j + gap])
 					swap(&array[j], &array[j + gap]);
 
-				/* Perform insertion sort on the current subarray */
+				/* Perform insertion sort on the current sub array */
 				f = j;
 				while (f >= gap)
 				{
