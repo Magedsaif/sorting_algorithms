@@ -80,22 +80,29 @@ int calc_list_size(listint_t *list)
 	return (cnt);
 }
 /**
- * get_last_node - get the last node of list.
+ * get_last_node - get the last node of the list.
  *
  * @list: list of numbers.
- * Return: the last node of list
+ *
+ * Return: the last node of the list.
  */
 listint_t *get_last_node(listint_t *list)
 {
 	listint_t *curr;
 
+	/* Initialize 'curr' as the head of the list */
 	curr = list;
+
+	/* Traverse the list until the last node is reached */
 	while (curr->next)
 	{
 		curr = curr->next;
 	}
+
+	/* Return the last node of the list */
 	return (curr);
 }
+
 
 /**
  * swap_list - swap the node with its previous node.
