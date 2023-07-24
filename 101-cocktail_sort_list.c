@@ -10,6 +10,8 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *curr, *curr2, *temp;
 	int flag, list_size, size, list_size1;
 
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
+		return;
 	list_size = calc_list_size(*list);
 	list_size1 = list_size;
 	curr = *list;
@@ -42,8 +44,6 @@ void cocktail_sort_list(listint_t **list)
 			} else
 				temp = temp->prev;
 		}
-		if (!flag)
-			break;
 		curr = curr->next;
 	}
 }
