@@ -98,18 +98,21 @@ listint_t *get_last_node(listint_t *list)
 }
 
 /**
- * swap_list - swap the node with it prev node.
+ * swap_list - swap the node with its previous node.
  *
  * @list: list of numbers.
- * @curr2: the node i wanna the swap it with prev node.
- * Return: the last node of list
+ * @curr2: the node to swap with its previous node.
+ *
+ * Return: the last node of the list.
  */
 listint_t *swap_list(listint_t *list, listint_t *curr2)
 {
 	listint_t *temp;
 
+	/* Store the previous node of the current node in 'temp' */
 	temp = curr2->prev;
 
+	/* Update pointers to perform the node swap */
 	curr2->prev = temp->prev;
 	if (temp->prev)
 		temp->prev->next = curr2;
@@ -120,7 +123,11 @@ listint_t *swap_list(listint_t *list, listint_t *curr2)
 	curr2->next = temp;
 	temp->prev = curr2;
 
+	/* Update the 'list' pointer if the current node is now the first node */
 	if (!curr2->prev)
 		list = curr2;
+
+	/* Return the updated list (the last node remains unchanged) */
 	return (list);
 }
+
