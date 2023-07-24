@@ -18,7 +18,6 @@ void bubble_sort(int *array, size_t size)
 		/* Inner loop to perform comparisons and swaps */
 		for (j = 0; j < size - i - 1; j++)
 		{
-			/* Check if the current element is greater than the next element */
 			if (array[j] > array[j + 1])
 			{
 				temp = array[j]; /* Swap elements using a temporary variable 'temp' */
