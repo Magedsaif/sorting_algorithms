@@ -22,10 +22,8 @@ void counting_sort(int *array, size_t size)
 		return;
 	max_num = array[0];
 	for (i = 1; i < size; i++)
-	{
 		if (array[i] > max_num)
 			max_num = array[i];
-	}
 	counts = malloc(sizeof(int) * (max_num + 1));
 	if (counts == NULL)
 		return;
