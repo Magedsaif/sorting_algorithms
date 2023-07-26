@@ -38,4 +38,6 @@ void cocktail_sort_list(listint_t **list);
 int calc_list_size(listint_t *list);
 void counting_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
+int *count_occurrences(int *array, size_t size, int *max_num);
+void rearrange_elements(int *array, int *counts, size_t size);
 #endif
